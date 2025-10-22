@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>AgroLife — Магазин Удобрений</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>AgroLife</h1>
+        <p>Высококачественные удобрения для вашего урожая</p>
+        <div class="cart-summary">
+            <span>Корзина: <span id="cart-count">0</span> товаров на <span id="cart-total-display">0</span> руб.</span>
+        </div>
+    </header>
+
+    <main>
+        <section id="catalog-section">
+            <h2>Каталог удобрений</h2>
+            <div id="product-list" class="product-grid">
+            </div>
+        </section>
+
+        <section id="cart-section">
+            <h2>Ваша корзина</h2>
+            <div id="cart-items">
+            </div>
+            <div class="cart-actions">
+                <button id="clear-cart" class="btn-secondary">Очистить корзину</button>
+                <button id="checkout-btn" class="btn-primary">Оформить заказ</button>
+            </div>
+        </section>
+
+        <div id="checkout-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3>Оформление заказа</h3>
+                <form id="checkout-form">
+                    <label for="customer-name">Ваше имя:</label>
+                    <input type="text" id="customer-name" required>
+
+                    <label for="customer-phone">Телефон:</label>
+                    <input type="tel" id="customer-phone" required>
+
+                    <label for="delivery-address">Адрес доставки:</label>
+                    <textarea id="delivery-address" rows="3" required></textarea>
+
+                    <label for="delivery-comment">Комментарий (необязательно):</label>
+                    <textarea id="delivery-comment" rows="2"></textarea>
+
+                    <div id="checkout-summary">
+                    </div>
+
+                    <button type="submit" class="btn-primary">Подтвердить заказ</button>
+                </form>
+            </div>
+        </div>
+
+        <section id="checkout-section">
+            <h2>Результат заказа</h2>
+            <div id="checkout-result">
+            </div>
+        </section>
+
+        <section>
+            <h2>Дополнительно</h2>
+            <button id="modal-btn" class="btn-secondary">О магазине</button>
+        </section>
+    </main>
+
+    <div id="about-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>О магазине AgroLife</h3>
+            <p>Мы предлагаем широкий ассортимент удобрений, необходимых для получения богатого урожая.
+            Быстрая доставка, качественные товары и индивидуальный подход к каждому клиенту.</p>
+        </div>
+    </div>
+
+    <script src="js/modules/catalog.js"></script>
+    <script src="js/modules/cart.js"></script>
+    <script src="js/modules/checkout.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

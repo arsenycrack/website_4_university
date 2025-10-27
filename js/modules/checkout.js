@@ -1,3 +1,4 @@
+// Модуль оформления заказа
 const CheckoutModule = (function() {
     const displayCheckoutModal = () => {
         const items = CartModule.getItems();
@@ -34,6 +35,8 @@ const CheckoutModule = (function() {
         });
         result += `\nИтого: ${CartModule.getTotal()} руб.\n`;
         result += "\nСпасибо за покупку!";
+
+        // Сброс корзины после оформления
         CartModule.clearCart();
 
         return result;

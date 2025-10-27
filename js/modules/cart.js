@@ -1,3 +1,4 @@
+// Модуль корзины
 const CartModule = (function() {
     let items = [];
 
@@ -55,6 +56,8 @@ const CartModule = (function() {
         totalDiv.id = 'cart-total';
         totalDiv.textContent = `Общая сумма: ${getTotal()} руб.`;
         list.appendChild(totalDiv);
+
+        // Обновляем шапку
         document.getElementById('cart-count').textContent = getItemCount();
         document.getElementById('cart-total-display').textContent = getTotal();
     };

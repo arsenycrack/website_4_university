@@ -2,28 +2,46 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>AgroLife — Магазин Удобрений</title>
+    <title>AgroSeed — Магазин Семян</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>AgroLife</h1>
-        <p>Высококачественные удобрения для вашего урожая</p>
+        <h1>AgroSeed</h1>
+        <p>Семена высокого качества для вашего сада и огорода</p>
         <div class="cart-summary">
             <span>Корзина: <span id="cart-count">0</span> товаров на <span id="cart-total-display">0</span> руб.</span>
         </div>
     </header>
 
     <main>
+        <!-- Слайдер -->
+        <section id="slider-section">
+            <h2>Популярные товары</h2>
+            <div class="slider-container">
+                <button class="slider-btn slider-btn-prev" id="slider-prev"><</button>
+                <div class="slider-wrapper">
+                    <div class="slider-track" id="slider-track">
+                        <!-- Слайды будут вставлены сюда -->
+                    </div>
+                </div>
+                <button class="slider-btn slider-btn-next" id="slider-next">></button>
+                <!-- Индикаторы слайдов -->
+                <div class="slider-dots" id="slider-dots"></div>
+            </div>
+        </section>
+
         <section id="catalog-section">
-            <h2>Каталог удобрений</h2>
+            <h2>Каталог семян</h2>
             <div id="product-list" class="product-grid">
+                <!-- Список товаров будет вставлен сюда -->
             </div>
         </section>
 
         <section id="cart-section">
             <h2>Ваша корзина</h2>
             <div id="cart-items">
+                <!-- Товары в корзине будут вставлены сюда -->
             </div>
             <div class="cart-actions">
                 <button id="clear-cart" class="btn-secondary">Очистить корзину</button>
@@ -31,6 +49,7 @@
             </div>
         </section>
 
+        <!-- Модальное окно оформления заказа -->
         <div id="checkout-modal" class="modal">
             <div class="modal-content">
                 <span class="close">&times;</span>
@@ -49,6 +68,7 @@
                     <textarea id="delivery-comment" rows="2"></textarea>
 
                     <div id="checkout-summary">
+                        <!-- Сюда вставляется содержимое корзины -->
                     </div>
 
                     <button type="submit" class="btn-primary">Подтвердить заказ</button>
@@ -59,6 +79,7 @@
         <section id="checkout-section">
             <h2>Результат заказа</h2>
             <div id="checkout-result">
+                <!-- Результат оформления заказа -->
             </div>
         </section>
 
@@ -68,12 +89,13 @@
         </section>
     </main>
 
+    <!-- Модальное окно "О магазине" -->
     <div id="about-modal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h3>О магазине AgroLife</h3>
-            <p>Мы предлагаем широкий ассортимент удобрений, необходимых для получения богатого урожая.
-            Быстрая доставка, качественные товары и индивидуальный подход к каждому клиенту.</p>
+            <h3>О магазине AgroSeed</h3>
+            <p>Мы предлагаем семена высокого качества от проверенных селекционеров.</p>
+            <p>Быстрая доставка, гарантия всхожести и помощь в выращивании.</p>
         </div>
     </div>
 

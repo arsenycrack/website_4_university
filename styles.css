@@ -92,6 +92,97 @@ h2 {
     background-color: #d0d0d0;
 }
 
+.slider-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.slider-wrapper {
+    overflow: hidden;
+    width: 100%;
+}
+
+.slider-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
+
+.slider-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.slider-slide .product-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: white;
+    border: 1px solid var(--border-color);
+}
+
+/*вот здесь ошибка*/
+.slider-slide .product-card img {
+    width: 10%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 4px 4px 0 0;
+    margin-bottom: 10px;
+    margin-left: 45%;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    font-size: 24px;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 4px;
+}
+
+.slider-btn:hover {
+    background: rgba(0,0,0,0.8);
+}
+
+.slider-btn-prev {
+    left: 10px;
+}
+
+.slider-btn-next {
+    right: 10px;
+}
+
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    gap: 8px;
+}
+
+.slider-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #bbb;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.slider-dot.active {
+    background-color: var(--primary-color);
+}
+
 .product-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -105,16 +196,39 @@ h2 {
     text-align: center;
     background-color: var(--secondary-color);
     transition: transform 0.2s;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
-.product-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+/*вот здесь тоже*/
+.product-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 4px 4px 0 0;
+    margin-bottom: 10px;
+}
+
+.product-card .product-info {
+    padding: 0 10px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .product-card h3 {
     color: var(--primary-dark);
     margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.product-card .description {
+    flex-grow: 1;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    color: #666;
 }
 
 .product-card .price {
@@ -131,6 +245,7 @@ h2 {
     padding: 8px 15px;
     border-radius: 4px;
     cursor: pointer;
+    margin-top: auto;
 }
 
 .add-to-cart-btn:hover {
@@ -156,6 +271,7 @@ h2 {
     padding: 5px 10px;
     border-radius: 4px;
     cursor: pointer;
+    margin-left: 10px;
 }
 
 .remove-from-cart-btn:hover {

@@ -1,7 +1,8 @@
 // Модальное окно "О магазине"
 document.addEventListener("DOMContentLoaded", () => {
     const aboutModal = document.getElementById("about-modal");
-    const aboutBtn = document.getElementById("modal-btn");
+    // const aboutBtn = document.getElementById("modal-btn");
+    const aboutBtn = document.getElementById("about-modal-btn");
     const aboutSpan = aboutModal.querySelector(".close");
 
     aboutBtn.onclick = () => aboutModal.style.display = "block";
